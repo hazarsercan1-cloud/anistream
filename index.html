@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniStream — Premium Anime İzleme Platformu</title>
+    <meta name="description" content="AniStream ile en sevdiğiniz animeleri yüksek kalitede, altyazılı olarak izleyin. Geniş kütüphane, hızlı yayın.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">▶</span>
+                <span class="logo-text">Ani<span class="logo-accent">Stream</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link active" data-section="home">Ana Sayfa</a>
+                <a href="#" class="nav-link" data-section="trending">Popüler</a>
+                <a href="#" class="nav-link" data-section="categories">Kategoriler</a>
+                <a href="#" class="nav-link" data-section="schedule">Yayın Takvimi</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-box" id="searchBox">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Anime ara...">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </button>
+                </div>
+                <button class="btn-premium" id="premiumBtn">
+                    <span class="premium-star">★</span> Premium
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-backdrop" id="heroBackdrop"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                YENİ SEZON
+            </div>
+            <h1 class="hero-title" id="heroTitle">Demon Slayer</h1>
+            <p class="hero-subtitle" id="heroSubtitle">Infinity Castle Arc</p>
+            <p class="hero-desc" id="heroDesc">Tanjiro ve arkadaşları, iblislerin gizli kalesi Sonsuzluk Kalesi'ne giriş yapıyor. Üst Kademeli iblislerle yapılacak son büyük savaş başlıyor.</p>
+            <div class="hero-meta" id="heroMeta">
+                <span class="meta-item"><span class="meta-icon">⭐</span> 9.2</span>
+                <span class="meta-item"><span class="meta-icon">📺</span> 24 Bölüm</span>
+                <span class="meta-item"><span class="meta-icon">📅</span> 2026</span>
+                <span class="meta-item tag">Aksiyon</span>
+                <span class="meta-item tag">Fantastik</span>
+            </div>
+            <div class="hero-actions">
+                <button class="btn-watch" onclick="openPlayer('demon-slayer')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    İzlemeye Başla
+                </button>
+                <button class="btn-list">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                    Listem
+                </button>
+            </div>
+        </div>
+        <!-- Hero Carousel Indicators -->
+        <div class="hero-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Continue Watching -->
+        <section class="content-section" id="continueSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">▶</span>
+                    İzlemeye Devam Et
+                </h2>
+            </div>
+            <div class="anime-row" id="continueRow">
+                <!-- Generated by JS -->
+            </div>
+        </section>
+
+        <!-- Trending -->
+        <section class="content-section" id="trendingSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">🔥</span>
+                    Trend Animeler
+                </h2>
+                <a href="#" class="see-all">Tümünü Gör →</a>
+            </div>
+            <div class="anime-grid" id="trendingGrid">
+                <!-- Generated by JS -->
+            </div>
+        </section>
+
+        <!-- Categories Filter -->
+        <section class="content-section" id="categoriesSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">📂</span>
+                    Kategoriler
+                </h2>
+            </div>
+            <div class="category-tabs" id="categoryTabs">
+                <button class="cat-tab active" data-category="all">Tümü</button>
+                <button class="cat-tab" data-category="aksiyon">Aksiyon</button>
+                <button class="cat-tab" data-category="romantik">Romantik</button>
+                <button class="cat-tab" data-category="komedi">Komedi</button>
+                <button class="cat-tab" data-category="korku">Korku</button>
+                <button class="cat-tab" data-category="isekai">Isekai</button>
+                <button class="cat-tab" data-category="spor">Spor</button>
+                <button class="cat-tab" data-category="bilimkurgu">Bilim Kurgu</button>
+            </div>
+            <div class="anime-grid" id="categoryGrid">
+                <!-- Generated by JS -->
+            </div>
+        </section>
+
+        <!-- New Episodes (Schedule) -->
+        <section class="content-section" id="scheduleSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">📅</span>
+                    Bu Haftanın Yeni Bölümleri
+                </h2>
+            </div>
+            <div class="schedule-grid" id="scheduleGrid">
+                <!-- Generated by JS -->
+            </div>
+        </section>
+
+        <!-- Top 10 -->
+        <section class="content-section" id="top10Section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">🏆</span>
+                    Top 10
+                </h2>
+            </div>
+            <div class="top10-list" id="top10List">
+                <!-- Generated by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Video Player Modal -->
+    <div class="player-modal" id="playerModal">
+        <div class="player-container">
+            <button class="player-close" id="playerClose">✕</button>
+            <div class="player-wrapper">
+                <video id="videoPlayer" poster="">
+                    <source src="" type="video/mp4">
+                    Tarayıcınız video oynatmayı desteklemiyor.
+                </video>
+                <div class="player-overlay" id="playerOverlay">
+                    <button class="play-btn-big" id="playBtnBig">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </button>
+                </div>
+                <div class="player-controls" id="playerControls">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-buffer" id="progressBuffer"></div>
+                    </div>
+                    <div class="controls-row">
+                        <div class="controls-left">
+                            <button class="ctrl-btn" id="playPauseBtn">
+                                <svg class="play-icon" width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                <svg class="pause-icon" width="22" height="22" viewBox="0 0 24 24" fill="white" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                            </button>
+                            <button class="ctrl-btn" id="skipBackBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12.5 8.5L8 12l4.5 3.5"/><path d="M20 12a8 8 0 1 1-4-6.93"/></svg>
+                            </button>
+                            <button class="ctrl-btn" id="skipFwdBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M11.5 8.5L16 12l-4.5 3.5"/><path d="M4 12a8 8 0 1 0 4-6.93"/></svg>
+                            </button>
+                            <div class="volume-control">
+                                <button class="ctrl-btn" id="volumeBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="white" stroke-width="2"/></svg>
+                                </button>
+                                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="1">
+                            </div>
+                            <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
+                        </div>
+                        <div class="controls-right">
+                            <button class="ctrl-btn subtitle-btn" id="subtitleBtn">CC</button>
+                            <select class="quality-select" id="qualitySelect">
+                                <option value="1080">1080p</option>
+                                <option value="720" selected>720p</option>
+                                <option value="480">480p</option>
+                                <option value="360">360p</option>
+                            </select>
+                            <button class="ctrl-btn" id="fullscreenBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Episode Info -->
+            <div class="player-info">
+                <h3 class="player-anime-title" id="playerAnimeTitle">Demon Slayer</h3>
+                <p class="player-ep-title" id="playerEpTitle">Bölüm 1 — Sonsuzluk Kalesi'ne Giriş</p>
+            </div>
+            <!-- Episode List -->
+            <div class="episode-list" id="episodeList">
+                <h4 class="episode-list-title">Bölümler</h4>
+                <div class="episodes-scroll" id="episodesScroll">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Modal -->
+    <div class="premium-modal" id="premiumModal">
+        <div class="premium-card">
+            <button class="premium-close" id="premiumClose">✕</button>
+            <div class="premium-glow"></div>
+            <span class="premium-badge-big">★ PREMIUM</span>
+            <h2 class="premium-title">AniStream Premium'a Geç</h2>
+            <p class="premium-desc">Reklamsız, 4K kalitede, sınırsız anime deneyimi.</p>
+            <ul class="premium-features">
+                <li>✓ Reklamsız izleme</li>
+                <li>✓ 4K Ultra HD kalite</li>
+                <li>✓ Simulcast (eşzamanlı yayın)</li>
+                <li>✓ Çevrimdışı indirme</li>
+                <li>✓ Tüm altyazı dilleri</li>
+            </ul>
+            <div class="premium-plans">
+                <div class="plan-card">
+                    <h4>Aylık</h4>
+                    <p class="plan-price">₺79.99<span>/ay</span></p>
+                </div>
+                <div class="plan-card popular">
+                    <div class="plan-badge">En Popüler</div>
+                    <h4>Yıllık</h4>
+                    <p class="plan-price">₺599.99<span>/yıl</span></p>
+                    <p class="plan-save">%37 Tasarruf</p>
+                </div>
+            </div>
+            <button class="btn-subscribe">Hemen Başla</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-icon">▶</span>
+                        <span class="logo-text">Ani<span class="logo-accent">Stream</span></span>
+                    </a>
+                    <p class="footer-desc">Türkiye'nin premium anime izleme platformu. Tüm içerikler yasal lisanslarla sunulmaktadır.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Keşfet</h4>
+                    <a href="#">Popüler Animeler</a>
+                    <a href="#">Yeni Eklenenler</a>
+                    <a href="#">Yayın Takvimi</a>
+                    <a href="#">Rastgele Anime</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Hesap</h4>
+                    <a href="#">Giriş Yap</a>
+                    <a href="#">Kayıt Ol</a>
+                    <a href="#">Premium</a>
+                    <a href="#">Listem</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Yasal</h4>
+                    <a href="#">Kullanım Şartları</a>
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Çerez Politikası</a>
+                    <a href="#">KVKK</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AniStream. Tüm hakları saklıdır. İçerikler lisanslı yayıncılar aracılığıyla sunulmaktadır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
